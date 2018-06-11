@@ -1,4 +1,5 @@
-var socket = io.connect('http://localhost:7777');
+// var post = process.env.PORT || 7777;
+var socket = io();
 
 function getNickName() {
   var urlString = window.location.href;
