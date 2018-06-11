@@ -7,6 +7,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var _ = require('lodash');
+var port = process.env.PORT || 7777;
 
 app.use('/assets', express.static('assets'));
 app.use('/scripts', express.static('scripts'));
@@ -79,7 +80,7 @@ io.on('connection', function(client) {
   });
 });
 
-server.listen(7777);
+server.listen(port);
 
 function addOnlineNick(nickname, callback) {
   if (!isExist(onlineNicks, nickname)) {
