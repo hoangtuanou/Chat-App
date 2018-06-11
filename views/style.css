@@ -1,0 +1,160 @@
+html, body {
+  text-align: center;
+  font-family: 'Avenir Next', 'Helvetica', 'Arial', sans-serif;
+}
+
+html,body,li,form,ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+}
+
+p {
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.room {
+  width: 60vw;
+  margin: 0 auto 20px;
+  border: gray 1px solid;
+}
+
+.room::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.list-online {
+  width: 35%;
+  float: left;
+}
+
+.user-online {
+  padding: 5px 10px;
+  line-height: 38px;
+  border-bottom: lightgray 1px solid;
+}
+
+.chat-wrapper {
+  float: left;
+  width: 65%;
+  height: 400px;
+  position: relative;
+  box-sizing: border-box;
+  border-left: gray 1px solid;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#thread {
+  padding: 10px 20px 0 20px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  height: 340px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#thread::-webkit-scrollbar { 
+  display: none;
+}
+
+.message-form-wrapper {
+  text-align: left;
+  height: 50px;
+  position: relative;
+  background-color: #e5e5e5;
+}
+
+#messages-form {
+  padding: 5px 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#message-box {
+  border: none;
+  line-height: 35px;
+  width: 80%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 0 0 10px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+  top: 10px;
+  background-color: #e5e5e5;
+}
+
+.submit-btn-wrapper {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: cornflowerblue;
+  position: absolute;
+  right: 20px;
+}
+
+.submit-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  vertical-align: middle;
+  background: url('../assets/send-message.svg');
+  padding: 0;
+}
+
+.own-messages {
+  text-align: right;
+}
+
+.other-message .message-wrapper {
+  border: solid 1px #e5e5e5;
+  border-bottom-left-radius: 0px;
+}
+
+.own-messages .message-wrapper {
+  background-color: lightgrey;
+  border-bottom-right-radius: 0px;
+}
+
+.message-wrapper {
+  max-width: 400px;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 0 5px 5px;
+  border-radius: 10px;
+}
+
+.nick-label, .message {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.message {
+  text-align: justify;
+}
+
+.error-message {
+  color: red;
+}
+
+.typing {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.show {
+  display: block;
+}
