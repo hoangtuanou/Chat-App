@@ -2,14 +2,14 @@ html
   head
     title Real Time Chat
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    link(rel="stylesheet" href="style.css")
+    link(rel="stylesheet" href="login.css")
   body
-    h1 Registry your nickname
     div.form-wrapper
+      h1 Join a chat!
       form#registry-form(action="/login" method="post")
         input#nickname(type="text" name="nickname" placeholder="nickname" autocomplete="off" required)
-        input(type="submit" value="Send")
-    if err
-      p.error-message= err
+        input.submit-btn(type="submit" value="Go")
+        if err
+          p.error-message= err
     script(src="https://code.jquery.com/jquery-3.1.1.min.js")
     script(src="scripts/login.js")

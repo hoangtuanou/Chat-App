@@ -6,11 +6,13 @@ html
     //- style(style="text/css")
     //-   @import url('https://fonts.googleapis.com/css?family=Montserrat')
   body
-    h1 Chat!
     div.room
       ul.list-online
       div.chat-wrapper
-        ul#thread
+        div#thread-container
+          div.header-info
+            h1 Chat Room
+          div#thread
           span.typing
         div.message-form-wrapper
           form#messages-form

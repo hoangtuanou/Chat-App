@@ -22,9 +22,13 @@ input:focus {
 }
 
 .room {
-  width: 60vw;
-  margin: 0 auto 20px;
+  width: 50vw;
+  height: 600px;
+  margin: 0 auto;
   border: gray 1px solid;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .room::after {
@@ -34,33 +38,53 @@ input:focus {
 }
 
 .list-online {
-  width: 35%;
+  width: 15%;
   float: left;
+  height: 100%;
+  background-color: #ECEBF9;
 }
 
 .user-online {
-  padding: 5px 10px;
+  padding: 20px 10px;
   line-height: 38px;
-  border-bottom: lightgray 1px solid;
+  text-align: center;
 }
 
 .chat-wrapper {
   float: left;
-  width: 65%;
-  height: 400px;
+  width: 85%;
+  height: 600px;
   position: relative;
   box-sizing: border-box;
   border-left: gray 1px solid;
   font-family: 'Montserrat', sans-serif;
 }
 
-#thread {
+#thread-container {
   padding: 10px 20px 0 20px;
   margin-bottom: 10px;
-  overflow-y: scroll;
-  height: 340px;
+  height: 540px;
   box-sizing: border-box;
   position: relative;
+}
+
+.header-info {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: solid 2px darkgray;
+}
+
+#thread {
+  max-height: 440px;
+  overflow-y: scroll;
+  transform: translate3d(0, 440px, 0); 
+}
+
+#thread div:last-child {
+  margin-bottom: 30px;
 }
 
 #thread::-webkit-scrollbar { 
@@ -101,6 +125,7 @@ input:focus {
   background-color: cornflowerblue;
   position: absolute;
   right: 20px;
+  opacity: 0.5;
 }
 
 .submit-btn {
@@ -114,19 +139,25 @@ input:focus {
 
 .own-messages {
   text-align: right;
+  animation: expandOwn 0.5s ease-in-out;
 }
 
-.other-message .message-wrapper {
+.other-message {
+  text-align: left;
+  animation: expand 0.5s ease-in-out;
+}
+
+.other-message .message-inner {
   border: solid 1px #e5e5e5;
   border-bottom-left-radius: 0px;
 }
 
-.own-messages .message-wrapper {
+.own-messages .message-inner {
   background-color: lightgrey;
   border-bottom-right-radius: 0px;
 }
 
-.message-wrapper {
+.message-inner {
   max-width: 400px;
   display: inline-block;
   padding: 10px;
@@ -157,4 +188,28 @@ input:focus {
 
 .show {
   display: block;
+}
+
+/*===================== ANIMATION ==============================*/
+
+@keyframes expandOwn {
+  0% {
+    transform: translate3d(500px, 0, 0);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translate3d(-5px, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: translate3d(-500px, 0, 0);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translate3d(5px, 0, 0);
+    opacity: 1;
+  }
 }

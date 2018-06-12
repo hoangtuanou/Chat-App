@@ -1,0 +1,45 @@
+body {
+  background-color: #1E3647;
+}
+
+.form-wrapper {
+  background-color: white;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: overlay;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.error-message {
+  color: #db2727;
+}
+
+#nickname {
+  line-height: 22px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+#nickname:focus {
+  outline: none;
+}
+
+.submit-btn {
+  padding: 5px 10px;
+  height: 36px;
+  width: 50px;
+  background-color: #79C7C5;
+  border: none;
+  transition: all 0.5s;
+  position: relative;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  border-radius: 5px;
+}
